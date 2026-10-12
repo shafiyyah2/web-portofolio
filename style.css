@@ -1,0 +1,795 @@
+
+/* ========================================
+   FEMININE MODERN PORTFOLIO
+   Pink Pastel + Lavender + Glass Effect
+======================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --pink: #e85d9e;
+    --pink-dark: #ce4386;
+    --pink-soft: #ffe5f0;
+    --lavender: #c4b5fd;
+    --purple: #8870d8;
+    --dark: #37304f;
+    --muted: #77718b;
+    --white: #ffffff;
+    --glass: rgba(255, 255, 255, 0.72);
+    --shadow: 0 12px 35px rgba(153, 105, 163, 0.13);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--dark);
+    line-height: 1.8;
+    overflow-x: hidden;
+
+    background:
+        radial-gradient(
+            ellipse at 5% 10%,
+            rgba(255, 193, 220, 0.48),
+            transparent 32%
+        ),
+        radial-gradient(
+            ellipse at 95% 30%,
+            rgba(202, 188, 255, 0.40),
+            transparent 32%
+        ),
+        radial-gradient(
+            ellipse at 50% 80%,
+            rgba(255, 224, 237, 0.35),
+            transparent 35%
+        ),
+        #fffafd;
+}
+
+a {
+    transition: all 0.3s ease;
+}
+
+::selection {
+    background: var(--pink);
+    color: white;
+}
+
+/* ========================================
+   NAVBAR
+======================================== */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+
+    background: rgba(255, 255, 255, 0.78);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border-bottom: 1px solid rgba(232, 93, 158, 0.12);
+}
+
+.navbar {
+    max-width: 1150px;
+    margin: auto;
+    padding: 16px 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: var(--dark);
+}
+
+.logo span {
+    color: var(--pink);
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+}
+
+.nav-menu a {
+    display: block;
+    text-decoration: none;
+    color: var(--dark);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 9px 15px;
+    border-radius: 30px;
+}
+
+.nav-menu a:hover {
+    color: var(--pink-dark);
+    background: var(--pink-soft);
+    transform: translateY(-2px);
+}
+
+/* ========================================
+   HERO / BERANDA
+======================================== */
+
+.hero {
+    max-width: 1150px;
+    min-height: 570px;
+    margin: auto;
+    padding: 80px 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 55px;
+
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+
+    width: 350px;
+    height: 350px;
+    right: 5%;
+    top: 12%;
+
+    border-radius: 45% 55% 60% 40%;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 213, 233, 0.65),
+        rgba(211, 199, 255, 0.55)
+    );
+
+    filter: blur(3px);
+}
+
+.hero-text {
+    flex: 1;
+    animation: fadeUp 0.9s ease both;
+}
+
+.sapaan {
+    display: inline-block;
+    padding: 7px 17px;
+    margin-bottom: 18px;
+
+    color: var(--pink-dark);
+    background: rgba(255, 226, 240, 0.85);
+
+    border: 1px solid rgba(232, 93, 158, 0.13);
+    border-radius: 30px;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    font-size: clamp(36px, 5vw, 58px);
+    line-height: 1.2;
+    letter-spacing: -1.5px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.hero h1 span {
+    color: var(--pink);
+    background: linear-gradient(
+        100deg,
+        #e85d9e,
+        #a78bfa
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero h2 {
+    font-size: 21px;
+    font-weight: 500;
+    color: var(--purple);
+    margin-bottom: 18px;
+}
+
+.hero-text > p:not(.sapaan) {
+    max-width: 520px;
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 28px;
+}
+
+/* Tombol utama */
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+
+    padding: 12px 25px;
+    border-radius: 50px;
+
+    background: linear-gradient(
+        120deg,
+        #f472b6,
+        #d9468d
+    );
+
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+
+    box-shadow: 0 8px 22px rgba(217, 70, 141, 0.22);
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 28px rgba(217, 70, 141, 0.30);
+}
+
+/* ========================================
+   FOTO PROFIL
+======================================== */
+
+.hero-image {
+    flex: 0 0 320px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    animation: fadeUp 1s ease both;
+}
+
+/* Foto berbentuk organik */
+
+.avatar {
+    width: 290px;
+    height: 340px;
+
+    object-fit: cover;
+    object-position: center top;
+
+    border-radius: 48% 48% 35% 35%;
+    border: 7px solid rgba(255, 255, 255, 0.92);
+
+    background: linear-gradient(
+        145deg,
+        #ffd8e9,
+        #dcd0ff
+    );
+
+    box-shadow:
+        0 15px 40px rgba(177, 120, 174, 0.20),
+        0 0 0 10px rgba(255, 255, 255, 0.30);
+
+    animation: float 4s ease-in-out infinite;
+}
+
+/* ========================================
+   SEMUA SECTION
+======================================== */
+
+.section {
+    padding: 80px 25px;
+    text-align: center;
+    position: relative;
+}
+
+.judul {
+    font-size: 31px;
+    line-height: 1.4;
+    font-weight: 700;
+    margin-bottom: 38px;
+    letter-spacing: -0.5px;
+}
+
+.judul::after {
+    content: "";
+    display: block;
+
+    width: 65px;
+    height: 5px;
+
+    margin: 12px auto 0;
+    border-radius: 20px;
+
+    background: linear-gradient(
+        90deg,
+        var(--pink),
+        var(--lavender)
+    );
+}
+
+/* ========================================
+   TENTANG SAYA
+======================================== */
+
+.tentang {
+    padding: 90px 8%;
+}
+
+.tentang .subjudul {
+    text-align: center;
+    color: #82758e;
+    font-size: 14px;
+    margin: -10px 0 40px;
+}
+
+.tentang-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: stretch;
+}
+
+.tentang-box {
+    position: relative;
+    padding: 35px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.78);
+    border: 1px solid rgba(232, 180, 215, 0.5);
+    box-shadow: 0 12px 35px rgba(170, 120, 160, 0.12);
+    backdrop-filter: blur(12px);
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.tentang-box:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 18px 40px rgba(170, 120, 160, 0.2);
+}
+
+.tentang-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+    background: linear-gradient(135deg, #f7b7d8, #c9b6ff);
+
+    color: #ffffff;
+    font-size: 25px;
+    margin-bottom: 22px;
+    flex-shrink: 0;
+}
+
+.tentang-icon i {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-style: normal;
+    line-height: 1;
+}
+
+
+.tentang-box h3 {
+    color: #48354f;
+    font-size: 22px;
+    margin-bottom: 18px;
+}
+
+.tentang-box > p {
+    color: #74677b;
+    font-size: 15px;
+    line-height: 1.9;
+    text-align: justify;
+}
+
+/* Informasi pendidikan */
+
+.pendidikan-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.pendidikan-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 14px;
+    border-radius: 15px;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 232, 244, 0.8),
+        rgba(239, 232, 255, 0.8)
+    );
+    transition: transform 0.25s ease;
+}
+
+.pendidikan-item:hover {
+    transform: translateX(5px);
+}
+
+.pendidikan-item > i {
+    color: #bd70ae;
+    font-size: 19px;
+    width: 25px;
+    text-align: center;
+    margin-top: 3px;
+}
+
+.pendidikan-item span {
+    display: block;
+    color: #98859e;
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+
+.pendidikan-item p {
+    color: #48354f;
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Tampilan tablet dan HP */
+
+@media (max-width: 850px) {
+    .tentang-container {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+    }
+
+    .tentang-box {
+        padding: 28px;
+    }
+}
+
+@media (max-width: 520px) {
+    .tentang {
+        padding: 65px 6%;
+    }
+
+    .tentang-box {
+        padding: 22px;
+        border-radius: 20px;
+    }
+
+    .tentang-box h3 {
+        font-size: 20px;
+    }
+
+    .tentang-box > p {
+        font-size: 14px;
+    }
+}
+
+/* ========================================
+   KEAHLIAN
+======================================== */
+
+.keahlian {
+    background: linear-gradient(
+        135deg,
+        rgba(255, 234, 244, 0.90),
+        rgba(242, 237, 255, 0.92)
+    );
+}
+
+.skill-container {
+    max-width: 1050px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.skill-card {
+    position: relative;
+    overflow: hidden;
+
+    padding: 32px 24px;
+    border-radius: 22px;
+
+    background: rgba(255, 255, 255, 0.82);
+    border: 1px solid rgba(255, 255, 255, 0.95);
+
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card::before {
+    content: "";
+    position: absolute;
+
+    width: 100px;
+    height: 100px;
+    top: -50px;
+    right: -45px;
+
+    border-radius: 50%;
+    background: rgba(255, 218, 236, 0.65);
+}
+
+.skill-card h3 {
+    position: relative;
+    font-size: 20px;
+    color: var(--pink-dark);
+    margin-bottom: 12px;
+}
+
+.skill-card p {
+    position: relative;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(174, 121, 178, 0.18);
+}
+
+/* ========================================
+   PROYEK
+======================================== */
+
+.project-container {
+    max-width: 1050px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.project-card {
+    padding: 25px;
+    text-align: left;
+
+    background: rgba(255, 255, 255, 0.84);
+    border: 1px solid #f1e5f1;
+    border-radius: 23px;
+
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    border-color: #f4b1d0;
+    box-shadow: 0 20px 40px rgba(174, 121, 178, 0.18);
+}
+
+.project-icon {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 19px;
+    background: linear-gradient(
+        135deg,
+        #ffe0ee,
+        #e5dcff
+    );
+
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.project-card h3 {
+    font-size: 17px;
+    margin-bottom: 9px;
+}
+
+.project-card p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* ========================================
+   KONTAK
+======================================== */
+
+.kontak {
+    background: linear-gradient(
+        135deg,
+        #ffebf4,
+        #f0eaff
+    );
+}
+
+.kontak > p {
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.kontak-info {
+    margin: 25px auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.kontak-info p {
+    padding: 10px 18px;
+
+    color: var(--dark);
+    font-size: 12px;
+
+    background: rgba(255, 255, 255, 0.78);
+    border: 1px solid rgba(232, 93, 158, 0.12);
+    border-radius: 50px;
+}
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+    padding: 25px 20px;
+    text-align: center;
+
+    background: #37304f;
+    color: #fce7f3;
+
+    font-size: 12px;
+}
+
+/* ========================================
+   ANIMASI
+======================================== */
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   RESPONSIVE TABLET
+======================================== */
+
+@media (max-width: 850px) {
+    .navbar {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .nav-menu {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 3px;
+    }
+
+    .nav-menu a {
+        padding: 7px 10px;
+        font-size: 12px;
+    }
+
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 55px 22px;
+        gap: 35px;
+    }
+
+    .hero-image {
+        flex-basis: auto;
+    }
+
+    .avatar {
+        width: 240px;
+        height: 280px;
+    }
+
+    .hero-text > p:not(.sapaan) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .skill-container,
+    .project-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* ========================================
+   RESPONSIVE HP
+======================================== */
+
+@media (max-width: 520px) {
+    .navbar {
+        padding: 15px 12px;
+    }
+
+    .logo {
+        font-size: 23px;
+    }
+
+    .hero h1 {
+        font-size: 35px;
+    }
+
+    .hero h2 {
+        font-size: 18px;
+    }
+
+    .avatar {
+        width: 200px;
+        height: 240px;
+    }
+
+    .section {
+        padding: 55px 18px;
+    }
+
+    .judul {
+        font-size: 26px;
+        margin-bottom: 30px;
+    }
+
+    .skill-container,
+    .project-container {
+        grid-template-columns: 1fr;
+    }
+
+    .skill-card,
+    .project-card {
+        padding: 25px 20px;
+    }
+
+    .tentang-box {
+        padding: 23px;
+    }
+
+    .kontak-info {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+/* Pengurangan animasi sesuai preferensi pengguna */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        scroll-behavior: auto !important;
+        transition: none !important;
+    }
+}
